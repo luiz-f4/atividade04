@@ -112,7 +112,7 @@
         <h1 id="title">Receita de Lasanha para 10 Pessoas</h1>
         <button class="btn" onclick="changeTitle()">Alterar Título</button>
         <h2>Ingredientes</h2>
-        <ul>
+        <ul id="ingredients">
             <li>500g de massa para lasanha</li>
             <li>1kg de carne moída</li>
             <li>2 cebolas médias picadas</li>
@@ -143,16 +143,23 @@
         function changeTitle() {
             document.getElementById("title").innerText = "Receita Especial de Lasanha";
         }
+
         function toggleIngredients() {
-            const ingredients = document.querySelector("ul");
+            const ingredients = document.getElementById("ingredients");
             if (ingredients.classList.contains("hidden")) {
                 ingredients.classList.remove("hidden");
             } else {
                 ingredients.classList.add("hidden");
             }
         }
+
         function changeImage() {
-            document.getElementById("lasagnaImg").src = "https://www.receiteria.com.br/wp-content/uploads/lasanha-de-carne-moida-730x449.jpg";
+            const img = document.getElementById("lasagnaImg");
+            if (img.src.includes("FrdumyhYaZY")) {
+                img.src = "https://www.receiteria.com.br/wp-content/uploads/lasanha-de-carne-moida-730x449.jpg";
+            } else {
+                img.src = "https://i.ytimg.com/vi/FrdumyhYaZY/maxresdefault.jpg";
+            }
         }
     </script>
 </body>
